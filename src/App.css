@@ -21,8 +21,9 @@ main.photos {
   grid-auto-flow: dense;
 }
 
-main.cart-page {
-  padding: 10px;
+.cart-page {
+  padding: 35px;
+
 }
 
 .cart-page > h1 {

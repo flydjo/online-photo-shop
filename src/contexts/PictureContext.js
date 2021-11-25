@@ -9,14 +9,13 @@ function ContextProvider(props) {
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json')
         .then(res => res.json())
-        .then(res => setImages(res));        
+        .then(res => setImages(res));
     }, [])
 
     function toggleFavorite(id) {
         //const image = images.find(img => img.id == id)
-        const image = images.find(img => img.id == id)
         const toggleImg = images.map(img => {
-            if(img.id == id) {
+            if(img.id === id) {
                 return {
                     ...img,
                     isFavorite: !img.isFavorite
@@ -41,7 +40,16 @@ function ContextProvider(props) {
     }
 
     return(
-        <Context.Provider value={{images, toggleFavorite, addImageToCart, cartItems, removeImageFromCart, setCartItems}}>
+        <Context.Provider 
+            value={{
+                images, 
+                toggleFavorite, 
+                addImageToCart, 
+                cartItems, 
+                removeImageFromCart, 
+                setCartItems
+            }}
+        >
             {props.children}
         </Context.Provider>
     )

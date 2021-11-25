@@ -7,7 +7,7 @@ function CartItem({item}) {
     return (
         <div className="cart-item">
             <i onClick={() => removeImageFromCart(item)} className="ri-delete-bin-line"></i>
-            <img src={item.url} width="130px" />
+            <img alt={`cart-item-${item.id}`} src={item.url} width="130px" />
             <p>$5.99</p>
         </div>
     )

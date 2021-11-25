@@ -27,14 +27,11 @@ function Image({className, img}) {
         }
     }
 
-    //const heartIcon = hovered && <i onClick={() => toggleFavorite(img.id)} className="ri-heart-line favorite"></i>
-    //const cartIcon = hovered && <i onClick={() => addImageToCart(img)} className="ri-add-circle-line cart"></i>
-
     return(
         <div onMouseEnter={handleHover} onMouseLeave={handleHover} className={`${className} image-container`}>
             {heartIcon()}
             {cartIcon()}
-            <img src={img.url} className="image-grid" />
+            <img alt={`item-${img.id}`} src={img.url} className="image-grid" />
         </div>
     )
 }
